@@ -8,10 +8,7 @@ REST_TIME_SECONDS = 20
 def rest():
     root = tk.Tk()
 
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-
-    root.geometry(f"{screen_width}x{screen_height}")
+    root.attributes("-fullscreen", True)
 
     countdown_label = tk.Label(root, font=("Helvetica", 48))
     countdown_label.pack(expand=True, fill="both")
