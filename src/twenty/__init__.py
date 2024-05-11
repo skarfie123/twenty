@@ -5,6 +5,7 @@ from multiprocessing import Process
 WORK_TIME_MINUTES = 20
 REST_TIME_SECONDS = 20
 
+
 def rest():
     root = tk.Tk()
 
@@ -32,7 +33,7 @@ def rest():
     root.mainloop()
     try:
         root.destroy()
-    except:
+    except tk.TclError:
         pass
 
 
@@ -43,10 +44,11 @@ def main():
             p.start()
             p.join()
             for i in range(WORK_TIME_MINUTES):
-                print(f"{WORK_TIME_MINUTES-i} miutes to next break")
+                print(f"{WORK_TIME_MINUTES - i} miutes to next break")
                 time.sleep(60)
     except KeyboardInterrupt:
         print("Exiting...")
+
 
 if __name__ == "__main__":
     main()
