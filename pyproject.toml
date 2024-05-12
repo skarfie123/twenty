@@ -6,6 +6,7 @@ authors = [{ name = "skarfie123", email = "rahulpai@rocketmail.com" }]
 dependencies = []
 readme = "README.md"
 requires-python = ">= 3.8"
+repository = "https://github.com/skarfie123/twenty"
 
 [project.scripts]
 "twenty" = "twenty:main"
@@ -16,7 +17,13 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = ["black>=24.4.2", "isort>=5.13.2"]
+
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
 
 [tool.hatch.metadata]
 allow-direct-references = true
